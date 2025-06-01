@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    // Quantidade de casas para mover cada peça
+    // ---------------------
+    // Variáveis de movimento
+    // ---------------------
     int movimentoTorre = 5;
     int movimentoBispo = 5;
     int movimentoRainha = 8;
 
     // ---------------------
-    // Movimento da TORRE
+    // Movimento da TORRE (FOR)
     // ---------------------
-    // A torre se move em linha reta. Aqui, vamos movê-la 5 casas para a direita.
+    // A torre se move 5 casas para a direita.
     printf("Movimento da Torre:\n");
 
     for (int i = 1; i <= movimentoTorre; i++) {
@@ -19,9 +21,9 @@ int main() {
     printf("\n");
 
     // ---------------------
-    // Movimento do BISPO
+    // Movimento do BISPO (WHILE)
     // ---------------------
-    // O bispo se move na diagonal. Vamos simular o movimento 5 casas na diagonal "cima + direita".
+    // O bispo se move 5 casas na diagonal: "Cima Direita".
     printf("Movimento do Bispo:\n");
 
     int contadorBispo = 1;
@@ -33,9 +35,9 @@ int main() {
     printf("\n");
 
     // ---------------------
-    // Movimento da RAINHA
+    // Movimento da RAINHA (DO-WHILE)
     // ---------------------
-    // A rainha pode se mover em qualquer direção. Vamos movê-la 8 casas para a esquerda.
+    // A rainha se move 8 casas para a esquerda.
     printf("Movimento da Rainha:\n");
 
     int contadorRainha = 1;
@@ -43,6 +45,30 @@ int main() {
         printf("Esquerda\n");
         contadorRainha++;
     } while (contadorRainha <= movimentoRainha);
+
+    printf("\n");
+
+    // ---------------------
+    // Movimento do CAVALO (FOR + WHILE ANINHADO)
+    // ---------------------
+    // O cavalo se move em "L": duas casas para baixo e uma para a esquerda.
+    printf("Movimento do Cavalo:\n");
+
+    // O loop FOR será usado para controlar quantas vezes o Cavalo realiza o movimento "L".
+    // Para este exemplo, faremos o movimento "L" apenas uma vez.
+    int quantidadeMovimentosCavalo = 1;
+
+    for (int i = 0; i < quantidadeMovimentosCavalo; i++) {
+        // Primeiro loop interno (WHILE): duas casas para baixo
+        int passosBaixo = 0;
+        while (passosBaixo < 2) {
+            printf("Baixo\n");
+            passosBaixo++;
+        }
+
+        // Depois uma casa para a esquerda
+        printf("Esquerda\n");
+    }
 
     return 0;
 }
